@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import psoft.com.localdatastorage.model.DataItem;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvOutPut;
@@ -16,7 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tvOutPut =(TextView) findViewById(R.id.outPut);
-        tvOutPut.setText(R.string.write_code);
+
+        DataItem item = new DataItem("","Shirt","Yellow","L",77,781.67,"shirt.jpg");
+
+        tvOutPut.setText(item.toString());
 
     }
 }
