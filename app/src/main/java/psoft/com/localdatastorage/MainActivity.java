@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.Collections;
@@ -12,10 +13,10 @@ import java.util.List;
 
 import psoft.com.localdatastorage.model.DataItem;
 import psoft.com.localdatastorage.sample.SampleDataProvider;
+import psoft.com.localdatastorage.utils.DataItemAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvOutPut;
 
     List<DataItem> dataItemList = SampleDataProvider.itemList;
 
@@ -23,9 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tvOutPut =(TextView) findViewById(R.id.outPut);
 
-        tvOutPut.setText("");
 
         Collections.sort(dataItemList, new Comparator<DataItem>() {
             @Override
@@ -34,12 +33,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        for (DataItem item:
-             dataItemList) {
-            String name = item.getItemName();
-            tvOutPut.append(name+"\n");
 
-        }
+        DataItemAdapter adapter = new DataItemAdapter(this,dataItemList);
+        ListView listView = (ListView)findViewById(android.R.id.list);
+        listView.setAdapter(adapter);
 
     }
 }
