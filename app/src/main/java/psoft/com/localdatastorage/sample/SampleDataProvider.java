@@ -7,10 +7,6 @@ import java.util.Map;
 
 import psoft.com.localdatastorage.model.DataItem;
 
-/**
- * Created by Ahnaf on 1/22/2019.
- */
-
 public class SampleDataProvider {
 
     public static List<DataItem> itemList;
