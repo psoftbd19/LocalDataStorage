@@ -13,12 +13,12 @@ import psoft.com.localdatastorage.model.DataItem;
 
 public class SampleDataProvider {
 
-    public static List<DataItem> itemList;
+    public static List<DataItem> dataItemList;
     public static Map<String, DataItem> dataItemMap;
 
 
     static {
-        itemList = new ArrayList<>();
+        dataItemList = new ArrayList<>();
         dataItemMap = new HashMap<>();
 
         addItem(new DataItem(null, "Quinoa Salmon Salad", "Salads",
@@ -114,7 +114,7 @@ public class SampleDataProvider {
 
 
     private static void addItem(DataItem dataItem){
-        itemList.add(dataItem);
+        dataItemList.add(dataItem);
         dataItemMap.put(dataItem.getItemId(),dataItem);
     }
 
