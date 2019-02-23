@@ -21,8 +21,8 @@ import psoft.com.localdatastorage.model.DataItem;
 public class DataItemAdapter extends RecyclerView.Adapter<DataItemAdapter.ViewHolder> {
 
 
-    public static final String DATA_ITEM_ID = "data_item_id";
-    public static final String DATA_ITEM ="data_item" ;
+    public static final String ITEM_ID = "item_id";
+    public static final String ITEM_KEY ="item_key" ;
     private Context context;
     private List<DataItem> dataItemList;
 
@@ -64,7 +64,7 @@ public class DataItemAdapter extends RecyclerView.Adapter<DataItemAdapter.ViewHo
             public void onClick(View view) {
 
                 Intent intent = new Intent(context,DetailActivity.class);
-                intent.putExtra(DATA_ITEM,item);
+                intent.putExtra(ITEM_KEY,item);
                 context.startActivity(intent);
 
 
