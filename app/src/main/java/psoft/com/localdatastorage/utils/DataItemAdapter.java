@@ -45,7 +45,6 @@ public class DataItemAdapter extends ArrayAdapter<DataItem> {
         imageView.setImageResource(R.drawable.apple_pie);
 
 
-
         return convertView;
     }
 }
