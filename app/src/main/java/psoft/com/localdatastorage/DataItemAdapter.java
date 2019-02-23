@@ -21,6 +21,7 @@ import psoft.com.localdatastorage.model.DataItem;
 public class DataItemAdapter extends RecyclerView.Adapter<DataItemAdapter.ViewHolder> {
 
 
+    public static final String DATA_ITEM_ID = "data_item_id";
     private Context context;
     private List<DataItem> dataItemList;
 
@@ -60,20 +61,18 @@ public class DataItemAdapter extends RecyclerView.Adapter<DataItemAdapter.ViewHo
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "OnClick Listener: "+item.getItemName(), Toast.LENGTH_SHORT).show();
+
+                String itemId=item.getItemId();
+
+                Intent intent = new Intent(context,DetailActivity.class);
+                intent.putExtra(DATA_ITEM_ID,itemId);
+                context.startActivity(intent);
+
 
 
             }
         });
 
-        holder.view.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-
-                Toast.makeText(context, "onLongClickListener: "+item.getPrice(), Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
 
 
 
