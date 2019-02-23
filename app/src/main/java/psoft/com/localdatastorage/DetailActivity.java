@@ -14,9 +14,10 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        String itemId = getIntent().getExtras().getString(DataItemAdapter.DATA_ITEM_ID);
+//        String itemId = getIntent().getExtras().getString(DataItemAdapter.DATA_ITEM_ID);
+        DataItem item = getIntent().getExtras().getParcelable(DataItemAdapter.DATA_ITEM);
 
-        DataItem item = SampleDataProvider.dataItemMap.get(itemId);
+     //   DataItem item = SampleDataProvider.dataItemMap.get(itemId);
         Toast.makeText(this, "detail Activity: "+item.getDescription(), Toast.LENGTH_SHORT).show();
     }
 }

@@ -22,6 +22,7 @@ public class DataItemAdapter extends RecyclerView.Adapter<DataItemAdapter.ViewHo
 
 
     public static final String DATA_ITEM_ID = "data_item_id";
+    public static final String DATA_ITEM ="data_item" ;
     private Context context;
     private List<DataItem> dataItemList;
 
@@ -62,12 +63,9 @@ public class DataItemAdapter extends RecyclerView.Adapter<DataItemAdapter.ViewHo
             @Override
             public void onClick(View view) {
 
-                String itemId=item.getItemId();
-
                 Intent intent = new Intent(context,DetailActivity.class);
-                intent.putExtra(DATA_ITEM_ID,itemId);
+                intent.putExtra(DATA_ITEM,item);
                 context.startActivity(intent);
-
 
 
             }
